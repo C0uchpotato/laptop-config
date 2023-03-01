@@ -320,4 +320,3 @@ nnoremap <silent> <localleader>h <Plug>(YCMToggleInlayHints)
 
 let g:ycm_auto_hover=''
 
-

@@ -5,9 +5,28 @@
       create: true
 
 - link:
-    ~/.vimrc: vimrc
-    ~/.bashrc: bashrc
-        
+    ~/.vimrc: home/vimrc
+    ~/.bashrc: home/bashrc
+    ~/.config/dunst:
+        path: config/dunst
+    ~/.config/gtk-2.0:
+        path: config/gtk-2.0
+    ~/.config/gkt-3.0:
+        path: config/gtk-3.0
+    ~/.config/gtk-4.0:
+        path: config/gtk-4.0
+    ~/.config/i3:
+        path: config/i3/
+    ~/.config/i3status:
+        path: config/i3status
+    ~/.config/nitrogen:
+        path: config/nitrogen
+    ~/.config/obsidian:
+        path: config/obsidian
+    ~/.config/Thunar:
+        path: config/Thunar  
+    ~/.config/tlpui:
+        path: config/tlpui
     
 - create:
     - ~/Downloads
