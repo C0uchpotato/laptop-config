@@ -1,0 +1,323 @@
+"File location
+"~/.vimrc
+
+" Search options
+set hlsearch
+set ignorecase
+set nowrap
+set incsearch
+set nocompatible
+filetype on
+filetype plugin on
+syntax on
+set number
+set cc=100
+highlight ColorColumn ctermbg=9
+let mapleader = ","
+set nohlsearch
+set clipboard=unnamedplus
+set encoding=utf-8
+let g:rainbow_active = 1
+set tabstop=4
+set hidden
+
+let &t_SI = "\<esc>[5 q"  " blinking I-beam in insert mode
+let &t_SR = "\<esc>[3 q"  " blinking underline in replace mode
+let &t_EI = "\<esc>[ q"  " default cursor (usually blinking block) otherwise
+
+:set scrolloff=5
+
+"" ALE
+
+let g:ale_pattern_options = {
+\   '.*\.asm$': {'ale_enabled': 0},
+\}
+
+
+let g:ale_linters = {
+\  'rust': ['analyzer'],
+\}
+
+set completeopt=menu,menuone,preview,noselect,noinsert
+let g:ale_completion_enabled = 1
+
+
+"Backgrounds // Colors
+
+"set guifont=DroidSansMono\ Nerd\ Font\ 11
+
+"autocmd vimenter * ++nested colorscheme gruvbox
+
+"let g:sierra_Pitch = 1
+"colorscheme sierra
+ 
+"colorscheme OceanicNext
+colorscheme paramount
+"colorscheme deus
+"colorscheme seoul256
+"colorscheme gotham
+
+"" Autocommands ""
+
+"Python run = F7
+
+autocmd FileType python map <buffer> <F7> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F7> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType rust map <buffer> <F8> <esc>:w<CR>:exec '!cargo run' shellescape(@%,1)<CR>
+
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+
+"Set .asm file to NASM syntax
+autocmd BufRead,BufNewFile *.asm set filetype=nasm
+
+autocmd BufNewFile,BufRead *.rs set filetype=rust
+
+"Copy new template file format from skeleton file
+
+autocmd BufNewFile *.asm r ~/.vim/templates/asm.template
+
+autocmd BufNewFile *.tex r ~/.vim/templates/tex_notes.template
+
+"autocmd VimEnter * NERDTree
+"autocmd BufEnter * NERDTreeMirror
+
+"PLUGIN START: vim-plug
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+"Default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+"Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Multiple Plug commands can be written in a single line using | separators
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" On-demand loading
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-default branch
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+"Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'
+
+ Plug 'SirVer/ultisnips'
+
+ Plug 'rust-lang/rust.vim'
+
+ Plug 'rhysd/open-pdf.vim'
+
+ Plug 'preservim/nerdtree'
+
+ Plug 'tpope/vim-fugitive'
+
+ Plug 'panozzaj/vim-autocorrect'
+
+ Plug 'vimwiki/vimwiki'
+
+ Plug 'frazrepo/vim-rainbow'
+
+" Plug 'ycm-core/YouCompleteMe'
+ 
+ Plug 'shirk/vim-gas'
+ 
+ Plug 'lfv89/vim-interestingwords'
+ 
+ Plug 'mhinz/vim-startify'
+ 
+ Plug 'dense-analysis/ale'
+
+ Plug 'morhetz/gruvbox'
+ 
+ Plug 'nathanaelkane/vim-indent-guides'
+ 
+ Plug 'ryanoasis/vim-devicons'
+
+ Plug 'simeji/winresizer'
+ 
+ Plug 'dracula/vim', { 'as': 'dracula'}
+
+ Plug 'jistr/vim-nerdtree-tabs' 
+
+ Plug 'chase/focuspoint-vim'
+
+Plug 'ajmwagar/vim-deus'
+
+Plug 'junegunn/seoul256.vim'
+
+Plug 'whatyouhide/vim-gotham'
+
+Plug 'lervag/vimtex'
+
+Plug 'tpope/vim-dispatch'
+
+ Plug 'wfxr/minimap.vim'
+" Initialize plugin system
+call plug#end()
+
+"""""""""""""""""""""""""""""""""
+" NERDTree Functions and colors "
+"""""""""""""""""""""""""""""""""
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+" you can add these colors to your .vimrc to help customizing
+let s:brown = "905532"
+let s:aqua =  "3AFFDB"
+let s:blue = "689FB6"
+let s:darkBlue = "44788E"
+let s:purple = "834F79"
+let s:lightPurple = "834F79"
+let s:red = "AE403F"
+let s:beige = "F5C06F"
+let s:yellow = "F09F17"
+let s:orange = "D4843E"
+let s:darkOrange = "F16529"
+let s:pink = "CB6F6F"
+let s:salmon = "EE6E73"
+let s:green = "8FAA54"
+let s:lightGreen = "31B53E"
+let s:white = "FFFFFF"
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
+
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+
+let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+
+let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
+let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
+
+let NERDTreeShowHidden=1
+let NERDTreeHighlightFolders=1
+
+"" Remaps ""
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Up> :tabnew<CR>
+nnoremap <C-Down> :tabclose<CR>
+
+nnoremap <leader>n :NERDTreeToggle <Cr>
+
+nnoremap <leader>m :MinimapToggle <Cr>
+
+nnoremap <leader>bl :set background=light<Cr>
+nnoremap <leader>bd :set background=dark<Cr>
+
+set background=dark
+
+" zathura and vimtex
+
+" This is necessary for VimTeX to load properly. The "indent" is optional.
+" Note that most plugin managers will do this automatically.
+filetype plugin indent on
+
+" This enables Vim's and neovim's syntax-related features. Without this, some
+" VimTeX features will not work (see ":help vimtex-requirements" for more
+" info).
+syntax enable
+
+" Viewer options: One may configure the viewer either by specifying a built-in
+" viewer method:
+let g:vimtex_view_method = 'zathura'
+
+" Or with a generic interface:
+"let g:vimtex_view_general_viewer = 'zathura'
+"let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+
+" VimTeX uses latexmk as the default compiler backend. If you use it, which is
+" strongly recommended, you probably don't need to configure anything. If you
+" want another compiler backend, you can change it as follows. The list of
+" supported backends and further explanation is provided in the documentation,
+" see ":help vimtex-compiler".
+let g:vimtex_compiler_method = 'latexrun'
+
+" Most VimTeX mappings rely on localleader and this can be changed with the
+" following line. The default is usually fine and is the symbol "\".
+let maplocalleader = ","
+
+
+"Function to open zathura
+"
+function! ZathuraOpenPdf()
+	let fullPath = expand("%:p")
+	let pdfFile = substitute(fullPath, ".tex", ".pdf", "")
+	execute "silent !zathura '" . pdfFile . "' &"
+endfunction
+
+nnoremap <leader>q :call ZathuraOpenPdf()<CR>
+
+
+let g:minimap_width = 10
+let g:minimap_auto_start = 0
+let g:minimap_auto_start_win_enter = 1
+
+
+"Runnign Python and Rust programs from editor
+
+autocmd FileType python map <buffer> <leader>rp :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <leader>rp <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType rust map <buffer> <leader>rr <esc>:w<CR>:exec '!cargo run' shellescape(@%,1)<CR>
+
+
+"PDF-Viewer
+"
+nnoremap <leader>po :Pdf %<CR> <C-w>l <CR>:bd<CR>
+
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+nnoremap <leader>e :Explore <CR>
+
+"nnoremap <leader>a,c :! as %filename -o %filename.o <CR>
+"nnoremap <leader>a,l :! ld %filename.o -o %filename
+"
+nnoremap <silent> <localleader>h <Plug>(YCMToggleInlayHints)
+
+let g:ycm_auto_hover=''
+
+

@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+      create: true
+
+- link:
+    ~/.vimrc: vimrc
+    ~/.bashrc: bashrc
+        
+    
+- create:
+    - ~/Downloads
+    - ~/Documents
+    - ~/Pictures
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
