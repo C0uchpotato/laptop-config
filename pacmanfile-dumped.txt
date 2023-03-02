@@ -334,3 +334,9 @@ zathura
 zathura-pdf-mupdf
 zoxide
 zsh
+Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
+Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
+Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
+Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
+Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
+Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
