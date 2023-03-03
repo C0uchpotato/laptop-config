@@ -11,7 +11,7 @@
         path: config/dunst
     ~/.config/gtk-2.0:
         path: config/gtk-2.0
-    ~/.config/gkt-3.0:
+    ~/.config/gtk-3.0:
         path: config/gtk-3.0
     ~/.config/gtk-4.0:
         path: config/gtk-4.0
@@ -27,6 +27,8 @@
         path: config/Thunar  
     ~/.config/tlpui:
         path: config/tlpui
+    ~/.config/rofi:
+        path: config/rofi
     
 - create:
     - ~/Downloads
