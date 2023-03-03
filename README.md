@@ -11,8 +11,8 @@ Firefox & Chromium
 
 Dependancies
 ---
-pacmanfile
-dotbot (included in git repo)
+[pacmanfile](https://github.com/cloudlena/pacmanfile) <br />
+[dotbot](https://github.com/anishathalye/dotbot) (included in git repo)
 
 
 Usage
