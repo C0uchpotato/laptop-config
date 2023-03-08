@@ -1,12 +1,3 @@
-2023/03/07-07:12:35.448 118d Reusing MANIFEST /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
-2023/03/07-07:12:35.448 118d Recovering log #64
-2023/03/07-07:12:35.575 118d Reusing old log /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000064.log 
-2023/03/07-07:12:36.705 118d Level-0 table #69: started
-2023/03/07-07:12:36.755 118d Level-0 table #69: 1035686 bytes OK
-2023/03/07-07:12:36.767 118d Delete type=0 #64
-2023/03/07-07:12:37.115 118c Compacting 1@1 + 1@2 files
-2023/03/07-07:12:37.165 118c Generated table #70@1: 5067 keys, 912528 bytes
-2023/03/07-07:12:37.165 118c Compacted 1@1 + 1@2 files => 912528 bytes
-2023/03/07-07:12:37.171 118c compacted to: files[ 0 0 1 0 0 0 0 ]
-2023/03/07-07:12:37.171 118c Delete type=2 #66
-2023/03/07-07:12:37.171 118c Delete type=2 #69
+2023/03/08-08:50:45.200 9d1 Reusing MANIFEST /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2023/03/08-08:50:45.201 9d1 Recovering log #68
+2023/03/08-08:50:45.256 9d1 Reusing old log /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000068.log 
