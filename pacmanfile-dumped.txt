@@ -14,3 +14,4 @@ Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.
 Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
 Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
 Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt
+Installed packages dumped to /home/jhelmer/.config/pacmanfile/pacmanfile-dumped.txt

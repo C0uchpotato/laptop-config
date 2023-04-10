@@ -29,7 +29,9 @@
         path: config/tlpui
     ~/.config/rofi:
         path: config/rofi
-    
+    ~/.config/tar-pit:
+        path: config/tar-pit
+
 - create:
     - ~/Downloads
     - ~/Documents

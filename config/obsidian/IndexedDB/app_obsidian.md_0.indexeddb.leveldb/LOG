@@ -1,3 +1,3 @@
-2023/03/08-08:50:45.200 9d1 Reusing MANIFEST /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
-2023/03/08-08:50:45.201 9d1 Recovering log #68
-2023/03/08-08:50:45.256 9d1 Reusing old log /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000068.log 
+2023/04/09-08:35:08.777 fca Reusing MANIFEST /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2023/04/09-08:35:08.778 fca Recovering log #103
+2023/04/09-08:35:08.862 fca Reusing old log /home/jhelmer/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000103.log 

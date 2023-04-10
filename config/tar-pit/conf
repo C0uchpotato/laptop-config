@@ -1,0 +1,15 @@
+#!/bin/bash
+	export COMPRESSION_LEVEL=-9
+	export EXTERNAL_STORAGE=
+	export DVD_DRIVE=/mnt/cdrom
+	export AUTO_BURN=false
+	export AUTO_CP_TO_EXTERN=false
+	export USER_CONFIG=$HOME/.config/tar-pit/conf.sh
+	export CONFIG_DIR=$HOME/.config/tar-pit
+	export USER_DEFINED_BACKUPS=$HOME/.config/tar-pit/backup.txt
+	export DEFAULT_BACKUPS=$HOME/.config/tar-pit/home_index.txt
+	export CONVERSION=1074000
+	export TAR=$(date '+%m-%d-%y').tar
+	export COMP_TAR=$(date '+%m-%d-%y').tar.gz
+	export TARGET=$HOME/tar-pit
+	export SPLIT=false

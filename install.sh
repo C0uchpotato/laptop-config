@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+DIR=home/jhelmer/.mozilla/firefox/**.default-release/chrome
 #6-18 is dotbot boilerplate
 #DO NOT EDIT (without proper knowledge)
 
@@ -26,6 +26,14 @@ if pacman -Qm | grep "pacmanfile" ; then
 else
 	yay pacmanfile		
 fi
+
+#if [ -d "$DIR" ] ; then
+#	echo "firefox userChrome.css likely exists"
+#else
+#	mkdir $DIR
+
+#fi
+
 
 #installs all programs listed in the "~/.config/pacmanfile/pacmanfile-dumped.txt
 pacmanfile sync

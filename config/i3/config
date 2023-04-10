@@ -81,6 +81,20 @@ bindsym $mod+8    workspace  $ws8
 bindsym $mod+9    workspace  $ws9
 bindsym $mod+0    workspace  $ws10
 
+
+# use workspaces on different monitors
+workspace "1" output eDP1
+workspace "2" output eDP1
+workspace "3" output eDP1
+workspace "4" output eDP1
+workspace "5" output eDP1
+workspace "6" output DP3-1
+workspace "7" output DP3-1
+workspace "8" output DP3-1
+workspace "9" output DP3-2
+workspace "10" output DP3-2
+
+
 # switch to workspace with numpad keys
 bindcode $mod+87 workspace 1
 bindcode $mod+88 workspace 2
@@ -597,7 +611,7 @@ bindsym $mod+shift+F2 exec firefox
 bindsym $mod+shift+F3 exec chromium
 bindsym $mod+shift+F4 exec obsidian
 
-
+bindsym $mod+shift+F9 exec "xset dpms force off"
 bindsym $mod+shift+F10 exec systemctl suspend
 bindsym $mod+shift+F11 exec systemctl hibernate
 bindsym $mod+shift+F12 exec systemctl poweroff
@@ -615,3 +629,7 @@ bindsym $mod+m bar mode toggle
   client.urgent           #2f343a #900000 #ffffff #900000
   client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
   client.background       #000000
+
+
+#bindsym $mod+a exec 'workspace 1; exec chromium; workspace 2; exec obsidian; workspace 3; exec firefox; workspace 5; exec pulsar; workspace 1'
+
